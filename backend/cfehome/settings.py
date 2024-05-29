@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'api',
     'products',
+    'emailservice',
 ]
 
 MIDDLEWARE = [
@@ -137,4 +138,11 @@ REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ],
+}
+
+EMAIL_SERVICE = {
+    'EMAIL_FROM': os.getenv('EMAIL_FROM'),
+    'EMAIL_PASSWORD': os.getenv('EMAIL_PASSWORD'),
+    'EMAIL_SMTP_SERVER': os.getenv('EMAIL_SMTP_SERVER'),
+    'EMAIL_PORT_SERVER': os.getenv('EMAIL_PORT_SERVER'),
 }
